@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frauera - A Velsci Initiative for Female Career Empowerment & Postpartum Wellness">
+    <title>Frauera | Female Empowerment & Postpartum Support Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cookie & GDPR Banner -->
+    <aside id="gdprBanner" class="cookie-banner" role="region" aria-label="Privacy and Cookie Consent">
+        <div class="cookie-content">
+            <p><strong>Privacy & Cookie Consent:</strong> We use minimal essential cookies to manage your session and compliance preferences safely. Read our <a href="#privacy" onclick="openModal('privacyModal')">Privacy Policy</a>.</p>
+            <div class="cookie-actions">
+                <button onclick="acceptCookies()" class="btn btn-primary btn-sm">Accept All</button>
+                <button onclick="acceptEssentialCookies()" class="btn btn-outline btn-sm">Essential Only</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Top Notice Banner -->
+    <div class="top-bar">
+        <p>🌸 <strong>Frauera.com</strong> — A Velsci Global Initiative | Empowering Mothers & Women Worldwide</p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo" aria-label="Frauera Homepage">
+                <svg width="38" height="38" viewBox="0 0 100 100" class="logo-svg" aria-hidden="true">
+                    <circle cx="50" cy="50" r="46" fill="#C86B85" opacity="0.15"/>
+                    <path d="M50 15 C35 35, 20 45, 20 62 A30 30 0 0 0 80 62 C80 45, 65 35, 50 15 Z" fill="none" stroke="#C86B85" stroke-width="4"/>
+                    <path d="M50 28 C40 42, 30 50, 30 62 A20 20 0 0 0 70 62 C70 50, 60 42, 50 28 Z" fill="#E8A598" opacity="0.6"/>
+                    <circle cx="50" cy="58" r="8" fill="#2D1E2F"/>
+                </svg>
+                <div class="brand-text">
+                    <span class="brand-title">Frauera</span>
+                    <span class="brand-sub">POWERED BY VELSCI</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#jobs">Job Portal</a>
+                <a href="#wellness">Postpartum Care</a>
+                <a href="#forum">Community Forum</a>
+                <a href="#advocacy">Maternity Rights</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline" onclick="openModal('oneNoteModal')">
+                    📄 OneNote Sync
+                </button>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">Safe • Transparent • Compliant</span>
+                <h1>Empowering Women, Supporting Mothers</h1>
+                <p>A dedicated platform connecting women with inclusive job opportunities, evidence-based postpartum recovery tools, and a safe community to overcome maternity bias.</p>
+                <div class="hero-cta">
+                    <a href="#jobs" class="btn btn-primary btn-lg">Explore Career Portal</a>
+                    <a href="#wellness" class="btn btn-secondary btn-lg">Postpartum Support</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="card-glass">
+                    <h3>🌸 Postpartum Breathing Tool</h3>
+                    <p>Relieve anxiety and stress using the 4-4-4-4 Box Breathing visualizer.</p>
+                    <div class="breathing-widget">
+                        <div class="breathing-circle" id="breathCircle">
+                            <span id="breathText">Prepare</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm" id="breathBtn" onclick="toggleBreathing()">Start Exercise</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Disclaimer Bar -->
+    <div class="disclaimer-bar">
+        <div class="container">
+            <p><strong>Medical Disclaimer:</strong> Information on Frauera is for educational purposes and community support only. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+        </div>
+    </div>
+
+    <main class="container main-content">
+
+        <!-- Job Portal Engine -->
+        <section id="jobs" class="section-block">
+            <div class="section-header">
+                <h2>Inclusive & Women-Focused Job Opportunities</h2>
+                <p>Filter remote, maternity-friendly, and returnship roles vetted for fair employment practices.</p>
+            </div>
+
+            <div class="filter-controls">
+                <button class="filter-btn active" onclick="filterJobs('all')">All Roles</button>
+                <button class="filter-btn" onclick="filterJobs('women-only')">Women-Centric Roles</button>
+                <button class="filter-btn" onclick="filterJobs('inclusive')">Inclusive Roles (Men & Women)</button>
+                <button class="filter-btn" onclick="filterJobs('remote')">Remote / Flexible</button>
+            </div>
+
+            <div class="job-grid" id="jobGrid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Postpartum Wellness Engine -->
+        <section id="wellness" class="section-block">
+            <div class="section-header">
+                <h2>Postpartum Recovery & Mental Wellness</h2>
+                <p>Gentle exercises, ground routines, and stress management guidance following childbirth.</p>
+            </div>
+
+            <div class="wellness-grid">
+                <article class="wellness-card">
+                    <div class="icon-wrap">🧘‍♀️</div>
+                    <h3>Pelvic Floor & Core Repair</h3>
+                    <p>Gentle Kegel routines and safe abdominal contraction techniques designed for post-childbirth rehabilitation.</p>
+                    <span class="tag">Physio Approved</span>
+                </article>
+
+                <article class="wellness-card">
+                    <div class="icon-wrap">🌿</div>
+                    <h3>5-4-3-2-1 Grounding Method</h3>
+                    <p>A simple sensory awareness exercise to reduce sudden anxiety spikes, postpartum overwhelm, and panic.</p>
+                    <span class="tag">Mental Wellness</span>
+                </article>
+
+                <article class="wellness-card">
+                    <div class="icon-wrap">💆‍♀️</div>
+                    <h3>Pressure Point Relief</h3>
+                    <p>Targeted acupressure techniques (PC6 and LI4 points) to soothe headaches, nausea, and exhaustion.</p>
+                    <span class="tag">Self-Care</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sanitized Community Forum -->
+        <section id="forum" class="section-block">
+            <div class="section-header">
+                <h2>Safe Community Forum</h2>
+                <p>Share your experiences safely. All inputs are strictly sanitized to protect user security.</p>
+            </div>
+
+            <div class="forum-wrapper">
+                <form id="forumForm" onsubmit="handlePostSubmit(event)" class="forum-form">
+                    <div class="form-group">
+                        <label for="authorName">Name or Alias (Optional)</label>
+                        <input type="text" id="authorName" class="form-input" placeholder="Anonymous Mother">
+                    </div>
+                    <div class="form-group">
+                        <label for="postCategory">Topic Category</label>
+                        <select id="postCategory" class="form-input">
+                            <option value="Postpartum Support">Postpartum Support</option>
+                            <option value="Maternity Career Return">Maternity Career Return</option>
+                            <option value="Mental Health">Mental Health</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postText">Your Experience / Question</label>
+                        <textarea id="postText" class="form-input" rows="4" required placeholder="Share your experience or ask a question..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Message</button>
+                </form>
+
+                <div class="forum-feed" id="forumFeed">
+                    <!-- Dynamic Forum Posts -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Maternity Rights & Advocacy -->
+        <section id="advocacy" class="section-block">
+            <div class="section-header">
+                <h2>Maternity Rights & Career Advocacy</h2>
+                <p>Addressing discrimination, wage gaps, and career progression blocks following maternity leave.</p>
+            </div>
+
+            <div class="advocacy-cards">
+                <div class="advocacy-card">
+                    <h3>Know Your Rights</h3>
+                    <p>Overview of international labor standards regarding parental leave protection, nursing breaks, and non-discrimination guarantees.</p>
+                </div>
+                <div class="advocacy-card">
+                    <h3>Return-to-Work Negotiator</h3>
+                    <p>Template guides for requesting flexible work schedules, phased return hours, and remote work conditions.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <span class="footer-title">Frauera.com</span>
+                <p>A specialized platform powered by Velsci Globals, committed to zero discrimination and transparent female support systems.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#jobs">Job Portal</a>
+                <a href="#wellness">Wellness Resources</a>
+                <a href="#forum">Community Forum</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Compliance</h4>
+                <a href="#privacy" onclick="openModal('privacyModal')">Privacy Policy</a>
+                <a href="#impressum" onclick="openModal('impressumModal')">Impressum (Legal Notice)</a>
+                <a href="#terms" onclick="openModal('termsModal')">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Frauera.com — A Velsci Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="oneNoteModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="oneNoteTitle">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('oneNoteModal')" aria-label="Close modal">×</button>
+            <h3 id="oneNoteTitle">📄 Master Business Documentation Sync</h3>
+            <p>Automatic status of Velsci Business Master Documentation sync:</p>
+            <div class="sync-status-box">
+                <p><strong>OneNote Document:</strong> <code>Velsci_Business_Expansion_Frauera_Strategy_V1</code></p>
+                <p><strong>Status:</strong> <span class="status-active">● Active & Synced</span></p>
+                <p><strong>Data Structure:</strong> Frauen Ecosystem, Career Network Engine, Postpartum Recovery Systems, Legal Compliance.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacyModal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('privacyModal')">×</button>
+            <h3>Privacy Policy (GDPR / CCPA Compliant)</h3>
+            <p>Frauera.com prioritizes user security and data minimization. We do not store personal tracking cookies without explicit consent. All forum entries are sanitized against cross-site scripting (XSS).</p>
+        </div>
+    </div>
+
+    <div id="impressumModal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('impressumModal')">×</button>
+            <h3>Impressum (Legal Notice)</h3>
+            <p><strong>Frauera.com</strong> is operated as part of the Velsci Globals Initiative ecosystem.</p>
+            <p><strong>Contact:</strong> legal@velsci.com</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
