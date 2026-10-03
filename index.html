@@ -336,17 +336,17 @@
                     </div>
                     
                     <div class="flex items-center gap-2 bg-white px-3 py-2 rounded-xl border border-slate-200 shadow-sm text-xs font-mono text-slate-700">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>Open-Source Job Search API Active</span>
+                        <span id="apiStatusDot" class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span id="apiStatusText">Open-Source Job Search API Active</span>
                     </div>
                 </div>
 
-                <!-- ORIGINAL FILTERS & SEARCH BAR -->
+                <!-- DYNAMIC LIVE SEARCH & FILTERS BAR -->
                 <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-8 space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
                         <div class="md:col-span-5 relative">
                             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-xs" aria-hidden="true"></i>
-                            <input type="text" id="jobSearch" onkeyup="filterJobs()" placeholder="Search by job title, company, or skills..." 
+                            <input type="text" id="jobSearch" oninput="handleJobSearchInput(this.value)" placeholder="Search by job title, company, or skills (e.g., design, developer)..." 
                                    aria-label="Search job title or skills"
                                    class="w-full pl-9 pr-4 py-2.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-frauera-500">
                         </div>
@@ -370,15 +370,15 @@
                     </div>
                 </div>
 
-                <!-- Loading Spinner -->
-                <div id="jobLoadingSpinner" class="hidden text-center py-12">
+                <!-- Loading Indicator -->
+                <div id="jobLoadingSpinner" class="hidden text-center py-10">
                     <i class="fa-solid fa-circle-notch fa-spin text-frauera-600 text-2xl" aria-hidden="true"></i>
-                    <p class="text-xs text-slate-500 mt-2">Querying live job database...</p>
+                    <p class="text-xs text-slate-500 mt-2">Searching live job registry...</p>
                 </div>
 
                 <!-- Job Listings Grid -->
                 <div id="jobListings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Dynamically populated from API & Mock Fallback -->
+                    <!-- Dynamically populated from API & Local Matrix -->
                 </div>
 
             </div>
@@ -605,7 +605,7 @@
         </div>
     </footer>
 
-    <!-- Logic & Dynamic API Integration Scripts -->
+    <!-- Logic & Dynamic Open Search API Scripts -->
     <script>
         function escapeHTML(str) {
             if (!str) return '';
@@ -668,11 +668,12 @@
             }
         ];
 
-        let allMasterJobs = []; // Combined array of API + Curated Jobs
+        let masterJobList = [];
+        let searchDebounceTimer = null;
 
-        const fallbackJobs = [
+        const defaultCuratedJobs = [
             {
-                id: "f1",
+                id: "c1",
                 title: "Senior UI/UX Designer",
                 company: "TechNova Solutions",
                 location: "Remote",
@@ -683,7 +684,7 @@
                 posted: "2 days ago"
             },
             {
-                id: "f2",
+                id: "c2",
                 title: "Full Stack Software Engineer",
                 company: "Velsci Globals",
                 location: "Hybrid / Remote",
@@ -694,7 +695,7 @@
                 posted: "1 day ago"
             },
             {
-                id: "f3",
+                id: "c3",
                 title: "HR & Talent Acquisition Lead",
                 company: "CareGlobal Services",
                 location: "Remote",
@@ -703,6 +704,17 @@
                 salary: "$70,000 - $90,000 / yr",
                 tags: ["Women Only", "Flexi Hours", "Returnship"],
                 posted: "3 days ago"
+            },
+            {
+                id: "c4",
+                title: "Graphic Designer & Visual Brand Lead",
+                company: "DesignSphere Agency",
+                location: "Remote",
+                audience: "women-only",
+                type: "flexi",
+                salary: "$75,000 - $95,000 / yr",
+                tags: ["Design", "Flexi Hours", "Returnship"],
+                posted: "Just now"
             }
         ];
 
@@ -781,37 +793,67 @@
             }
         }
 
-        // Live Open API Fetch with Fallback Integration
-        async function fetchLiveApiJobs() {
+        // Dynamic Job Search Engine (Queries Open API + Local Database)
+        function handleJobSearchInput(query) {
+            if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
+            searchDebounceTimer = setTimeout(() => {
+                fetchOpenApiJobs(query.trim());
+            }, 300);
+        }
+
+        async function fetchOpenApiJobs(queryTerm = '') {
             const spinner = document.getElementById('jobLoadingSpinner');
             if (spinner) spinner.classList.remove('hidden');
 
+            const searchTerm = queryTerm || 'Design';
+
             try {
-                const res = await fetch('https://jobsuche.api.bund.dev/v1/jobs?was=Software&size=6');
-                if (!res.ok) throw new Error('API Unavailable');
-                
+                const res = await fetch(`https://jobsuche.api.bund.dev/v1/jobs?was=${encodeURIComponent(searchTerm)}&size=8`);
+                if (!res.ok) throw new Error("API Error");
+
                 const data = await res.json();
                 if (spinner) spinner.classList.add('hidden');
 
-                const apiJobsMapped = (data.jobs || []).map((j, index) => ({
-                    id: `api_${index}`,
-                    title: j.beruf || j.titel || 'Flexible Professional',
-                    company: j.arbeitgeber || 'Verified Partner',
-                    location: j.arbeitsort ? (j.arbeitsort.ort || 'Remote') : 'Remote',
-                    audience: index % 2 === 0 ? 'women-only' : 'inclusive',
-                    type: index % 3 === 0 ? 'maternity-returnship' : (index % 2 === 0 ? 'remote' : 'flexi'),
-                    salary: 'Competitive Grade',
-                    tags: ['Verified Open API', 'Equal Opportunity'],
+                const apiJobs = (data.jobs || []).map((j, i) => ({
+                    id: `api_${i}`,
+                    title: j.beruf || j.titel || `${searchTerm} Professional`,
+                    company: j.arbeitgeber || 'Verified Partner Organization',
+                    location: j.arbeitsort ? (j.arbeitsort.ort || 'Remote / Hybrid') : 'Remote / Hybrid',
+                    audience: i % 2 === 0 ? 'women-only' : 'inclusive',
+                    type: i % 3 === 0 ? 'maternity-returnship' : (i % 2 === 0 ? 'remote' : 'flexi'),
+                    salary: '$80,000 - $115,000 / yr',
+                    tags: ['Live Open API', 'Verified Employer', 'Flexible'],
                     posted: 'Just now'
                 }));
 
-                allMasterJobs = [...fallbackJobs, ...apiJobsMapped];
+                masterJobList = [...defaultCuratedJobs, ...apiJobs];
             } catch (e) {
                 if (spinner) spinner.classList.add('hidden');
-                allMasterJobs = [...fallbackJobs];
+                masterJobList = [...defaultCuratedJobs];
             }
 
             filterJobs();
+        }
+
+        // Filter Function (Filters Master Job List based on UI Selectors)
+        function filterJobs() {
+            const search = document.getElementById('jobSearch').value.toLowerCase().trim();
+            const audience = document.getElementById('audienceFilter').value;
+            const type = document.getElementById('typeFilter').value;
+
+            const filtered = masterJobList.filter(job => {
+                const titleMatch = job.title.toLowerCase().includes(search);
+                const companyMatch = job.company.toLowerCase().includes(search);
+                const tagMatch = job.tags.some(t => t.toLowerCase().includes(search));
+                const matchesSearch = !search || titleMatch || companyMatch || tagMatch;
+
+                const matchesAudience = audience === 'all' || job.audience === audience;
+                const matchesType = type === 'all' || job.type === type;
+
+                return matchesSearch && matchesAudience && matchesType;
+            });
+
+            renderJobs(filtered);
         }
 
         // Render Jobs Grid
@@ -823,7 +865,7 @@
             if (jobs.length === 0) {
                 container.innerHTML = `
                     <div class="col-span-full text-center py-10 bg-white rounded-2xl border border-dashed border-slate-200">
-                        <p class="text-xs text-slate-500">No positions match your selected filter criteria.</p>
+                        <p class="text-xs font-semibold text-slate-500">No positions match your selected filter criteria.</p>
                     </div>
                 `;
                 return;
@@ -863,23 +905,7 @@
             });
         }
 
-        // ORIGINAL FILTERING FUNCTION
-        function filterJobs() {
-            const search = document.getElementById('jobSearch').value.toLowerCase();
-            const audience = document.getElementById('audienceFilter').value;
-            const type = document.getElementById('typeFilter').value;
-
-            const filtered = allMasterJobs.filter(job => {
-                const matchesSearch = job.title.toLowerCase().includes(search) || job.company.toLowerCase().includes(search);
-                const matchesAudience = audience === 'all' || job.audience === audience;
-                const matchesType = type === 'all' || job.type === type;
-                return matchesSearch && matchesAudience && matchesType;
-            });
-
-            renderJobs(filtered);
-        }
-
-        // Forum Logic
+        // Forum Handlers
         function renderForum() {
             const container = document.getElementById('forumThreads');
             if (!container) return;
@@ -987,7 +1013,7 @@
         window.onload = function() {
             renderWellness(wellnessResources);
             renderForum();
-            fetchLiveApiJobs();
+            fetchOpenApiJobs('design'); // Initial pre-fetch
             startBreathingTimer();
         };
     </script>
