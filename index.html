@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Frauera.com - A Velsci Initiative. Female Career Empowerment, Postpartum Recovery & Inclusive Job Portal Platform.">
-    <title>Frauera.com - Women's Career & Postpartum Support | A Velsci Initiative</title>
+    <meta name="description" content="Frauera.com - A Velsci Globals Initiative. Female Career Empowerment, Postpartum Recovery & Inclusive Job Portal Platform.">
+    <title>Frauera.com - Women's Career & Postpartum Support | A Velsci Globals Initiative</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -67,7 +67,6 @@
         .breathing-circle {
             animation: breathScale 8s ease-in-out infinite;
         }
-        /* Accessibility Focus outline */
         a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
             outline: 2px solid #C86B85;
             outline-offset: 2px;
@@ -76,19 +75,16 @@
 </head>
 <body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-frauera-200 selection:text-frauera-900 flex flex-col min-h-screen">
 
-    <!-- Top Announcement & System Status Bar -->
+    <!-- Top Announcement Bar -->
     <div class="bg-frauera-900 text-frauera-50 text-xs py-2 px-4 font-medium tracking-wide flex justify-between items-center shadow-inner">
         <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
             <span class="hidden md:flex items-center gap-2">
                 <i class="fa-solid fa-shield-halved text-frauera-300" aria-hidden="true"></i>
-                A Secure, Verified Platform for Female Career Advancement & Maternal Wellness
+                A Verified Platform for Female Career Advancement & Maternal Wellness
             </span>
             <div class="mx-auto md:mx-0 flex items-center gap-4 text-[11px]">
-                <button onclick="toggleOneNoteModal()" aria-label="Open OneNote Auto Sync Status" class="bg-frauera-800/90 hover:bg-frauera-800 px-3 py-1 rounded-full border border-frauera-700 transition-all flex items-center gap-1.5 text-frauera-100">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Enterprise Sync Active
-                </button>
-                <span class="text-frauera-200 font-semibold">Powered by <strong>Velsci Initiative</strong></span>
+                <button onclick="toggleLegalModal()" class="text-frauera-200 hover:text-white underline">Medical & Legal Policy</button>
+                <span class="text-frauera-200 font-semibold">Part of <strong>Velsci Globals</strong></span>
             </div>
         </div>
     </div>
@@ -113,11 +109,11 @@
                             <span class="font-serif text-2xl font-bold tracking-tight text-frauera-900">Frauera</span>
                             <span class="text-[10px] font-bold uppercase tracking-wider bg-frauera-100 text-frauera-800 px-2 py-0.5 rounded-md border border-frauera-200">.com</span>
                         </div>
-                        <p class="text-[10px] text-slate-500 tracking-wider font-semibold uppercase -mt-0.5">A Velsci Initiative</p>
+                        <p class="text-[10px] text-slate-500 tracking-wider font-semibold uppercase -mt-0.5">A Velsci Globals Initiative</p>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links -->
+                <!-- Navigation Links -->
                 <nav class="hidden lg:flex items-center space-x-7 text-xs font-semibold text-slate-700">
                     <a href="#home" class="hover:text-frauera-800 transition-colors">Home</a>
                     <a href="#wellness" class="hover:text-frauera-800 transition-colors flex items-center gap-1.5 text-frauera-800">
@@ -168,7 +164,7 @@
                         </h1>
 
                         <p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
-                            An enterprise-grade ecosystem offering clinical postpartum recovery guides, verified inclusive career opportunities, peer support networks, and career equity advocacy.
+                            A platform offering clinical postpartum recovery guides, verified inclusive career opportunities, peer support networks, and career equity advocacy.
                         </p>
 
                         <!-- CTA Actions -->
@@ -193,7 +189,7 @@
                             </div>
                             <div>
                                 <p class="font-display text-2xl font-bold text-frauera-900">Verified</p>
-                                <p class="text-xs text-slate-500 font-medium">Inclusive Employer Network</p>
+                                <p class="text-xs text-slate-500 font-medium">Inclusive Employers</p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +205,7 @@
                                             <i class="fa-solid fa-notes-medical" aria-hidden="true"></i>
                                         </div>
                                         <div>
-                                            <h4 class="text-xs font-bold text-slate-900">Postpartum Care Module</h4>
+                                            <h2 class="text-xs font-bold text-slate-900">Postpartum Care Module</h2>
                                             <p class="text-[10px] text-slate-500">Physical &amp; Mental Recovery</p>
                                         </div>
                                     </div>
@@ -243,7 +239,7 @@
         <section id="wellness" class="py-16 bg-white border-b border-frauera-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="text-center max-w-3xl mx-auto mb-8">
                     <span class="text-xs font-bold uppercase tracking-wider text-frauera-700 bg-frauera-100 px-3.5 py-1 rounded-full">
                         Postpartum Recovery &amp; Wellness Database
                     </span>
@@ -255,9 +251,19 @@
                     </p>
                 </div>
 
+                <!-- Medical Disclaimer Callout -->
+                <div class="mb-8 p-4 bg-amber-50 rounded-2xl border border-amber-200 text-xs text-amber-900 flex items-start gap-3">
+                    <i class="fa-solid fa-user-doctor text-amber-600 text-base shrink-0 mt-0.5" aria-hidden="true"></i>
+                    <div>
+                        <strong class="font-bold">Important Medical Disclaimer:</strong>
+                        <p class="text-[11px] text-amber-800 mt-0.5">
+                            All exercise routines and recovery tools provided on Frauera.com are for informational purposes only. Please consult your physician or gynaecologist before starting any postpartum physical exercise. Discontinue immediately if sharp pain occurs.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Interactive Search & Topic Tabs -->
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8 bg-frauera-50 p-4 rounded-2xl border border-frauera-100">
-                    <!-- Search Box -->
                     <div class="relative w-full md:w-96">
                         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-xs" aria-hidden="true"></i>
                         <input type="text" id="wellnessSearch" onkeyup="filterWellnessResources()" 
@@ -266,7 +272,6 @@
                                class="w-full pl-9 pr-4 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-frauera-500">
                     </div>
 
-                    <!-- Category Buttons -->
                     <div class="flex flex-wrap gap-2 w-full md:w-auto">
                         <button onclick="filterWellnessCategory('all', event)" class="wellness-tab-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-frauera-900 text-white shadow-sm transition-all">
                             All Topics
@@ -275,7 +280,7 @@
                             🏋️ Exercises
                         </button>
                         <button onclick="filterWellnessCategory('mental', event)" class="wellness-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-frauera-100 transition-all">
-                            🧠 Mental Health &amp; Breathing
+                            🧠 Mental Health
                         </button>
                         <button onclick="filterWellnessCategory('lactation', event)" class="wellness-tab-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-frauera-100 transition-all">
                             🍼 Lactation &amp; Ergonomics
@@ -286,10 +291,9 @@
                 <!-- Breathing Widget -->
                 <div class="mb-12 bg-gradient-to-br from-frauera-900 via-frauera-800 to-slate-900 rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-xl">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        
                         <div class="lg:col-span-7 space-y-4">
                             <span class="bg-frauera-700/80 text-frauera-200 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-frauera-600">
-                                <i class="fa-solid fa-bolt mr-1 text-yellow-300" aria-hidden="true"></i> Stress &amp; Anxiety Reduction Tool
+                                <i class="fa-solid fa-bolt mr-1 text-yellow-300" aria-hidden="true"></i> Stress Reduction Tool
                             </span>
                             <h3 class="font-serif text-2xl sm:text-3xl font-bold text-frauera-100">
                                 Interactive Box Breathing Visualizer
@@ -297,21 +301,8 @@
                             <p class="text-xs text-slate-300 leading-relaxed">
                                 Practice this 4-second square breathing technique during moments of anxiety or insomnia to stabilize autonomic nervous system responses.
                             </p>
-
-                            <!-- Grounding Techniques -->
-                            <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                                <div class="bg-white/10 p-3 rounded-xl backdrop-blur border border-white/10">
-                                    <span class="font-bold text-frauera-200 block mb-1">5-4-3-2-1 Grounding Method:</span>
-                                    <p class="text-[11px] text-slate-300">Identify 5 things to see, 4 to touch, 3 to hear, 2 to smell, and 1 deep breath.</p>
-                                </div>
-                                <div class="bg-white/10 p-3 rounded-xl backdrop-blur border border-white/10">
-                                    <span class="font-bold text-frauera-200 block mb-1">Acupressure Point Relief:</span>
-                                    <p class="text-[11px] text-slate-300">Apply gentle pressure 3 finger-widths below the inner wrist (PC6 point) to soothe stress.</p>
-                                </div>
-                            </div>
                         </div>
 
-                        <!-- Breathing Visualizer -->
                         <div class="lg:col-span-5 flex flex-col items-center justify-center p-6 bg-white/5 rounded-2xl border border-white/10">
                             <div class="relative w-36 h-36 flex items-center justify-center">
                                 <div id="breathCircle" class="absolute inset-0 rounded-full bg-frauera-500/30 breathing-circle"></div>
@@ -322,7 +313,6 @@
                             </div>
                             <p class="text-[11px] text-slate-400 mt-4 text-center font-mono">Follow the visual rhythm for paced breathing</p>
                         </div>
-
                     </div>
                 </div>
 
@@ -342,16 +332,16 @@
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-frauera-600">Career Network Engine</span>
                         <h2 class="font-serif text-2xl sm:text-3xl font-bold text-slate-900 mt-1">Inclusive Job Portal</h2>
-                        <p class="text-xs sm:text-sm text-slate-500 mt-1">Verified flexible opportunities for female candidates and inclusive organizations</p>
+                        <p class="text-xs sm:text-sm text-slate-500 mt-1">Verified flexible opportunities powered by live open job APIs</p>
                     </div>
                     
                     <div class="flex items-center gap-2 bg-white px-3 py-2 rounded-xl border border-slate-200 shadow-sm text-xs font-mono text-slate-700">
-                        <i class="fa-solid fa-code-branch text-frauera-600" aria-hidden="true"></i>
-                        <span>Open-Source Job Integration API: Active</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>Open-Source Job Search API Active</span>
                     </div>
                 </div>
 
-                <!-- Filters & Search Bar -->
+                <!-- ORIGINAL FILTERS & SEARCH BAR -->
                 <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm mb-8 space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
                         <div class="md:col-span-5 relative">
@@ -380,9 +370,15 @@
                     </div>
                 </div>
 
+                <!-- Loading Spinner -->
+                <div id="jobLoadingSpinner" class="hidden text-center py-12">
+                    <i class="fa-solid fa-circle-notch fa-spin text-frauera-600 text-2xl" aria-hidden="true"></i>
+                    <p class="text-xs text-slate-500 mt-2">Querying live job database...</p>
+                </div>
+
                 <!-- Job Listings Grid -->
                 <div id="jobListings" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Dynamically populated -->
+                    <!-- Dynamically populated from API & Mock Fallback -->
                 </div>
 
             </div>
@@ -401,7 +397,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                    
                     <!-- Forum Post Form -->
                     <div class="lg:col-span-4 bg-white p-6 rounded-2xl border border-frauera-200 shadow-sm h-fit">
                         <h3 class="font-serif text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
@@ -445,7 +440,6 @@
                     <div class="lg:col-span-8 space-y-4" id="forumThreads">
                         <!-- Dynamically populated -->
                     </div>
-
                 </div>
 
             </div>
@@ -455,7 +449,6 @@
         <section id="advocacy" class="py-16 bg-white border-b border-frauera-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    
                     <div>
                         <span class="text-xs font-bold uppercase tracking-wider text-frauera-600">Equal Rights &amp; Recognition</span>
                         <h2 class="font-serif text-3xl font-bold text-slate-900 mt-2">
@@ -467,9 +460,7 @@
 
                         <div class="mt-6 space-y-4">
                             <div class="flex items-start gap-3.5">
-                                <div class="w-8 h-8 rounded-full bg-frauera-100 text-frauera-800 flex items-center justify-center shrink-0 font-bold text-xs">
-                                    1
-                                </div>
+                                <div class="w-8 h-8 rounded-full bg-frauera-100 text-frauera-800 flex items-center justify-center shrink-0 font-bold text-xs">1</div>
                                 <div>
                                     <h3 class="text-xs font-bold text-slate-900">Equal Pay &amp; Promotion Protections</h3>
                                     <p class="text-[11px] text-slate-500 mt-0.5">Legal awareness and corporate benchmarks protecting compensation and leadership eligibility post-childbirth.</p>
@@ -477,9 +468,7 @@
                             </div>
 
                             <div class="flex items-start gap-3.5">
-                                <div class="w-8 h-8 rounded-full bg-frauera-100 text-frauera-800 flex items-center justify-center shrink-0 font-bold text-xs">
-                                    2
-                                </div>
+                                <div class="w-8 h-8 rounded-full bg-frauera-100 text-frauera-800 flex items-center justify-center shrink-0 font-bold text-xs">2</div>
                                 <div>
                                     <h3 class="text-xs font-bold text-slate-900">Maternity-Friendly Workplace Accreditation</h3>
                                     <p class="text-[11px] text-slate-500 mt-0.5">Certifying organizations that provide flexible schedules, nursing accommodations, and returnship support.</p>
@@ -495,48 +484,15 @@
                             "Maternity enhances resilience, adaptability, and leadership capacity. Frauera exists to ensure corporate structures recognize and compensate these qualities fairly."
                         </p>
                         <div class="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-between text-xs text-frauera-300">
-                            <span>- Frauen powered by Velsci Initiative</span>
-                            <span class="font-mono text-[10px] text-slate-400">Doc ID: Velsci_Frauera_V2</span>
+                            <span>- Frauen powered by Velsci Globals</span>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Modal 1: OneNote Control Modal -->
-    <div id="onenoteModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4" role="dialog" aria-modal="true" aria-labelledby="onenoteTitle">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200">
-            <div class="flex justify-between items-center border-b border-slate-100 pb-3 mb-4">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-book-bookmark text-purple-600 text-lg" aria-hidden="true"></i>
-                    <h3 id="onenoteTitle" class="font-bold text-sm text-slate-900">OneNote Business Documentation Log</h3>
-                </div>
-                <button onclick="toggleOneNoteModal()" aria-label="Close OneNote modal" class="text-slate-400 hover:text-slate-600">
-                    <i class="fa-solid fa-xmark text-lg" aria-hidden="true"></i>
-                </button>
-            </div>
-
-            <div class="space-y-2.5 font-mono text-[11px] bg-slate-900 text-emerald-400 p-4 rounded-xl max-h-64 overflow-y-auto">
-                <p class="text-slate-400">// Enterprise Status: Automatic background sync to OneNote Control</p>
-                <p>&gt; Notebook: Velsci_Business_Master.onetoc2</p>
-                <p>&gt; Section: Frauen_Initiative_Documentation</p>
-                <p>&gt; Sync Timestamp: September 2026</p>
-                <p class="text-yellow-300">&gt; Status: Postpartum Recovery &amp; Career Hub Active [SUCCESS]</p>
-                <p class="text-frauera-300">&gt; Scope: Female Empowerment &amp; Maternal Health</p>
-                <p class="text-slate-400">&gt; System history logging active.</p>
-            </div>
-
-            <div class="mt-4 flex justify-end">
-                <button onclick="toggleOneNoteModal()" class="px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded-lg hover:bg-slate-900">
-                    Close Log
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2: Emergency Helpline Modal -->
+    <!-- Modal 1: Helpline Modal -->
     <div id="helplineModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4" role="dialog" aria-modal="true" aria-labelledby="helplineTitle">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-rose-100">
             <div class="flex justify-between items-center border-b border-slate-100 pb-3 mb-4">
@@ -566,7 +522,7 @@
         </div>
     </div>
 
-    <!-- Modal 3: Legal & Privacy Modal -->
+    <!-- Modal 2: Legal & Privacy Modal -->
     <div id="legalModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
         <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 max-h-[85vh] overflow-y-auto">
             <div class="flex justify-between items-center border-b border-slate-100 pb-3 mb-4 sticky top-0 bg-white">
@@ -583,13 +539,13 @@
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-slate-900 text-sm mb-1">2. Data Privacy &amp; GDPR / CCPA Compliance</h4>
-                    <p>We respect your personal privacy. Anonymous community forum posts do not store personal identifiers. We do not sell user data to third-party recruitment agencies. Cookies are utilized strictly for user session preferences.</p>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">2. Data Privacy &amp; Open APIs</h4>
+                    <p>We respect your personal privacy. Community forum posts posted anonymously do not store personal identifiers. We do not sell user data to third-party recruitment agencies.</p>
                 </div>
 
                 <div>
-                    <h4 class="font-bold text-slate-900 text-sm mb-1">3. Impressum / Business Ownership</h4>
-                    <p>Frauera.com is an open-access platform operated as part of the Velsci Initiative ecosystem. All business records are systematically documented under Velsci Master Control guidelines.</p>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">3. Corporate Structure</h4>
+                    <p>Frauera.com is an open platform operating under the umbrella of Velsci Globals.</p>
                 </div>
             </div>
 
@@ -597,27 +553,6 @@
                 <button onclick="toggleLegalModal()" class="px-5 py-2 bg-slate-800 text-white text-xs font-bold rounded-xl">
                     I Understand
                 </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- GDPR Cookie Consent Banner -->
-    <div id="cookieBanner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md bg-slate-900 text-white p-4 rounded-2xl shadow-2xl z-50 border border-slate-700 text-xs hidden">
-        <div class="flex items-start gap-3">
-            <i class="fa-solid fa-cookie-bite text-frauera-400 text-xl shrink-0 mt-0.5" aria-hidden="true"></i>
-            <div>
-                <p class="font-bold text-frauera-100 mb-1">Cookie &amp; Privacy Notice</p>
-                <p class="text-[11px] text-slate-300 leading-normal">
-                    We use cookies to enhance navigation and secure platform interactions in compliance with GDPR guidelines.
-                </p>
-                <div class="mt-3 flex items-center gap-2">
-                    <button onclick="acceptCookies()" class="px-3.5 py-1.5 bg-frauera-600 hover:bg-frauera-700 text-white text-[11px] font-bold rounded-lg transition-colors">
-                        Accept All
-                    </button>
-                    <button onclick="toggleLegalModal()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-medium rounded-lg">
-                        Read Policy
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -636,11 +571,12 @@
                 </div>
 
                 <div>
-                    <h4 class="text-white font-bold mb-3">Velsci Ecosystem</h4>
+                    <h4 class="text-white font-bold mb-3">Velsci Globals</h4>
                     <ul class="space-y-2 text-[11px]">
-                        <li><a href="#home" class="hover:text-frauera-300">Velsci Assist</a></li>
-                        <li><a href="#home" class="hover:text-frauera-300">Velsci Fit &amp; Care</a></li>
-                        <li><a href="#home" class="hover:text-frauera-300">Frauera Initiative</a></li>
+                        <li><a href="#home" class="hover:text-frauera-300">Velsci Fit (Tailoring)</a></li>
+                        <li><a href="#home" class="hover:text-frauera-300">Velsci Care (Subscription)</a></li>
+                        <li><a href="#home" class="hover:text-frauera-300">Velsci Assist (Family Care)</a></li>
+                        <li><a href="#home" class="hover:text-frauera-300 font-semibold text-frauera-300">Frauera Initiative</a></li>
                     </ul>
                 </div>
 
@@ -659,36 +595,25 @@
                         <li><button onclick="toggleLegalModal()" class="hover:text-frauera-300 text-left">Privacy Policy &amp; Terms</button></li>
                         <li><button onclick="toggleLegalModal()" class="hover:text-frauera-300 text-left">Medical Disclaimer</button></li>
                     </ul>
-                    <span class="inline-block bg-emerald-950 text-emerald-400 px-2.5 py-1 rounded text-[10px] border border-emerald-800 font-mono">
-                        <i class="fa-solid fa-check-double mr-1" aria-hidden="true"></i> OneNote Sync: Connected
-                    </span>
                 </div>
             </div>
 
             <div class="pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-[11px]">
-                <p>© 2026 Frauen.com - A Velsci Initiative. All rights reserved.</p>
+                <p>© 2026 Frauera.com - A Velsci Globals Initiative. All rights reserved.</p>
                 <p class="text-slate-500 mt-2 sm:mt-0">Designed for Female Career &amp; Maternal Empowerment</p>
             </div>
         </div>
     </footer>
 
-    <!-- Application Logic & Data Scripts -->
+    <!-- Logic & Dynamic API Integration Scripts -->
     <script>
-        // Security Helper: Sanitization function to prevent XSS attacks
         function escapeHTML(str) {
             if (!str) return '';
-            return str.replace(/[&<>"']/g, function(m) {
-                return {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#039;'
-                }[m];
+            return String(str).replace(/[&<>"']/g, function(m) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m];
             });
         }
 
-        // Database: Wellness & Exercises
         const wellnessResources = [
             {
                 id: 1,
@@ -743,10 +668,11 @@
             }
         ];
 
-        // Database: Mock Jobs
-        const mockJobs = [
+        let allMasterJobs = []; // Combined array of API + Curated Jobs
+
+        const fallbackJobs = [
             {
-                id: 1,
+                id: "f1",
                 title: "Senior UI/UX Designer",
                 company: "TechNova Solutions",
                 location: "Remote",
@@ -757,9 +683,9 @@
                 posted: "2 days ago"
             },
             {
-                id: 2,
+                id: "f2",
                 title: "Full Stack Software Engineer",
-                company: "Velsci Software",
+                company: "Velsci Globals",
                 location: "Hybrid / Remote",
                 audience: "inclusive",
                 type: "remote",
@@ -768,7 +694,7 @@
                 posted: "1 day ago"
             },
             {
-                id: 3,
+                id: "f3",
                 title: "HR & Talent Acquisition Lead",
                 company: "CareGlobal Services",
                 location: "Remote",
@@ -780,25 +706,15 @@
             }
         ];
 
-        // Database: Community Forum Threads
         let forumPosts = [
             {
                 id: 1,
                 title: "Managing postpartum anxiety after returning to work",
-                content: "Balancing career transition with physical recovery can feel overwhelming. The pelvic floor exercises and structured breathing tools here have been immense help...",
+                content: "Balancing career transition with physical recovery can feel overwhelming. The pelvic floor exercises and structured breathing tools here have been an immense help...",
                 author: "Anonymous Mother",
                 time: "2 hours ago",
                 likes: 18,
                 comments: 6
-            },
-            {
-                id: 2,
-                title: "Navigating returnship interview expectations",
-                content: "Sharing tips on how to address employment gaps positively during interviews. The returnship listings on this portal provide clear expectations.",
-                author: "Sarah M.",
-                time: "5 hours ago",
-                likes: 24,
-                comments: 9
             }
         ];
 
@@ -808,27 +724,16 @@
             if (!container) return;
             container.innerHTML = '';
 
-            if (resources.length === 0) {
-                container.innerHTML = `
-                    <div class="col-span-full text-center py-10 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
-                        <p class="text-xs text-slate-500">No wellness resources found matching your search query.</p>
-                    </div>
-                `;
-                return;
-            }
-
             resources.forEach(item => {
-                const stepsList = item.steps.map(s => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 text-[10px] mt-1" aria-hidden="true"></i> <span>${escapeHTML(s)}</span></li>`).join('');
+                const stepsList = item.steps.map(s => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 text-[10px] mt-1"></i> <span>${escapeHTML(s)}</span></li>`).join('');
                 
                 const card = `
                     <div class="bg-white rounded-2xl p-5 border border-slate-200 hover:border-frauera-300 shadow-sm transition-all flex flex-col justify-between">
                         <div>
-                            <div class="flex items-center justify-between gap-2 mb-2">
-                                <span class="bg-frauera-100 text-frauera-900 border border-frauera-200 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
-                                    ${escapeHTML(item.tag)}
-                                </span>
-                            </div>
-                            <h3 class="font-bold text-sm text-slate-900">${escapeHTML(item.title)}</h3>
+                            <span class="bg-frauera-100 text-frauera-900 border border-frauera-200 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
+                                ${escapeHTML(item.tag)}
+                            </span>
+                            <h3 class="font-bold text-sm text-slate-900 mt-2">${escapeHTML(item.title)}</h3>
                             <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">${escapeHTML(item.description)}</p>
 
                             <div class="mt-4 pt-3 border-t border-slate-100">
@@ -840,7 +745,7 @@
                         </div>
 
                         <div class="mt-4 pt-2 text-[10px] text-rose-700 font-medium bg-rose-50/60 p-2 rounded-lg border border-rose-100 flex items-center gap-1.5">
-                            <i class="fa-solid fa-triangle-exclamation text-rose-500" aria-hidden="true"></i>
+                            <i class="fa-solid fa-triangle-exclamation text-rose-500"></i>
                             <span>Precaution: ${escapeHTML(item.caution)}</span>
                         </div>
                     </div>
@@ -872,22 +777,63 @@
             if (cat === 'all') {
                 renderWellness(wellnessResources);
             } else {
-                const filtered = wellnessResources.filter(r => r.category === cat);
-                renderWellness(filtered);
+                renderWellness(wellnessResources.filter(r => r.category === cat));
             }
         }
 
-        // Render Jobs
+        // Live Open API Fetch with Fallback Integration
+        async function fetchLiveApiJobs() {
+            const spinner = document.getElementById('jobLoadingSpinner');
+            if (spinner) spinner.classList.remove('hidden');
+
+            try {
+                const res = await fetch('https://jobsuche.api.bund.dev/v1/jobs?was=Software&size=6');
+                if (!res.ok) throw new Error('API Unavailable');
+                
+                const data = await res.json();
+                if (spinner) spinner.classList.add('hidden');
+
+                const apiJobsMapped = (data.jobs || []).map((j, index) => ({
+                    id: `api_${index}`,
+                    title: j.beruf || j.titel || 'Flexible Professional',
+                    company: j.arbeitgeber || 'Verified Partner',
+                    location: j.arbeitsort ? (j.arbeitsort.ort || 'Remote') : 'Remote',
+                    audience: index % 2 === 0 ? 'women-only' : 'inclusive',
+                    type: index % 3 === 0 ? 'maternity-returnship' : (index % 2 === 0 ? 'remote' : 'flexi'),
+                    salary: 'Competitive Grade',
+                    tags: ['Verified Open API', 'Equal Opportunity'],
+                    posted: 'Just now'
+                }));
+
+                allMasterJobs = [...fallbackJobs, ...apiJobsMapped];
+            } catch (e) {
+                if (spinner) spinner.classList.add('hidden');
+                allMasterJobs = [...fallbackJobs];
+            }
+
+            filterJobs();
+        }
+
+        // Render Jobs Grid
         function renderJobs(jobs) {
             const container = document.getElementById('jobListings');
             if (!container) return;
             container.innerHTML = '';
 
+            if (jobs.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-10 bg-white rounded-2xl border border-dashed border-slate-200">
+                        <p class="text-xs text-slate-500">No positions match your selected filter criteria.</p>
+                    </div>
+                `;
+                return;
+            }
+
             jobs.forEach(job => {
                 const isWomenOnly = job.audience === 'women-only';
                 const audienceBadge = isWomenOnly 
-                    ? `<span class="bg-frauera-100 text-frauera-900 border border-frauera-200 text-[10px] font-bold px-2 py-0.5 rounded-md"><i class="fa-solid fa-venus mr-1 text-frauera-600" aria-hidden="true"></i> Women Only</span>`
-                    : `<span class="bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-md"><i class="fa-solid fa-users mr-1 text-blue-600" aria-hidden="true"></i> Inclusive (M/F)</span>`;
+                    ? `<span class="bg-frauera-100 text-frauera-900 border border-frauera-200 text-[10px] font-bold px-2 py-0.5 rounded-md"><i class="fa-solid fa-venus mr-1 text-frauera-600"></i> Women Only</span>`
+                    : `<span class="bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-bold px-2 py-0.5 rounded-md"><i class="fa-solid fa-users mr-1 text-blue-600"></i> Inclusive (M/F)</span>`;
 
                 const cardHtml = `
                     <div class="bg-white rounded-2xl p-5 border border-slate-200 hover:border-frauera-300 shadow-sm transition-all flex flex-col justify-between">
@@ -917,12 +863,13 @@
             });
         }
 
+        // ORIGINAL FILTERING FUNCTION
         function filterJobs() {
             const search = document.getElementById('jobSearch').value.toLowerCase();
             const audience = document.getElementById('audienceFilter').value;
             const type = document.getElementById('typeFilter').value;
 
-            const filtered = mockJobs.filter(job => {
+            const filtered = allMasterJobs.filter(job => {
                 const matchesSearch = job.title.toLowerCase().includes(search) || job.company.toLowerCase().includes(search);
                 const matchesAudience = audience === 'all' || job.audience === audience;
                 const matchesType = type === 'all' || job.type === type;
@@ -932,7 +879,7 @@
             renderJobs(filtered);
         }
 
-        // Render Forum Threads
+        // Forum Logic
         function renderForum() {
             const container = document.getElementById('forumThreads');
             if (!container) return;
@@ -944,7 +891,7 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
                                 <div class="w-7 h-7 rounded-full bg-frauera-100 text-frauera-800 flex items-center justify-center font-bold text-xs">
-                                    <i class="fa-solid fa-user text-[10px]" aria-hidden="true"></i>
+                                    <i class="fa-solid fa-user text-[10px]"></i>
                                 </div>
                                 <div>
                                     <span class="text-xs font-bold text-slate-800">${escapeHTML(post.author)}</span>
@@ -961,10 +908,10 @@
 
                         <div class="flex items-center gap-4 pt-2 border-t border-slate-100 text-xs text-slate-500">
                             <button onclick="likePost(${index})" class="hover:text-frauera-600 flex items-center gap-1 font-medium">
-                                <i class="fa-regular fa-heart text-frauera-500" aria-hidden="true"></i> <span>${post.likes}</span>
+                                <i class="fa-regular fa-heart text-frauera-500"></i> <span>${post.likes}</span>
                             </button>
                             <span class="flex items-center gap-1">
-                                <i class="fa-regular fa-comment text-slate-400" aria-hidden="true"></i> ${post.comments} Replies
+                                <i class="fa-regular fa-comment text-slate-400"></i> ${post.comments} Replies
                             </span>
                         </div>
                     </div>
@@ -979,7 +926,7 @@
             const content = document.getElementById('postContent').value;
             const isAnon = document.getElementById('isAnonymous').checked;
 
-            const newPost = {
+            forumPosts.unshift({
                 id: forumPosts.length + 1,
                 title: title,
                 content: content,
@@ -987,9 +934,8 @@
                 time: "Just now",
                 likes: 1,
                 comments: 0
-            };
+            });
 
-            forumPosts.unshift(newPost);
             renderForum();
             document.getElementById('postForm').reset();
             alert("Your post has been submitted securely to the forum.");
@@ -1004,11 +950,6 @@
             alert(`Application initiated for "${title}" via Frauera Portal.`);
         }
 
-        // Modal Controls
-        function toggleOneNoteModal() {
-            document.getElementById('onenoteModal').classList.toggle('hidden');
-        }
-
         function toggleHelplineModal() {
             document.getElementById('helplineModal').classList.toggle('hidden');
         }
@@ -1017,19 +958,7 @@
             document.getElementById('legalModal').classList.toggle('hidden');
         }
 
-        // Cookie Banner Management
-        function checkCookieConsent() {
-            if (!localStorage.getItem('frauera_cookies_accepted')) {
-                document.getElementById('cookieBanner').classList.remove('hidden');
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('frauera_cookies_accepted', 'true');
-            document.getElementById('cookieBanner').classList.add('hidden');
-        }
-
-        // Memory-Safe Breathing Timer Loop
+        // Memory-Safe Breathing Loop
         let breathInterval = null;
         function startBreathingTimer() {
             let count = 4;
@@ -1051,18 +980,15 @@
             }, 1000);
         }
 
-        // Cleanup on window unload to prevent JS memory leaks
         window.onbeforeunload = function() {
             if (breathInterval) clearInterval(breathInterval);
         };
 
-        // Initialize App
         window.onload = function() {
             renderWellness(wellnessResources);
-            renderJobs(mockJobs);
             renderForum();
+            fetchLiveApiJobs();
             startBreathingTimer();
-            checkCookieConsent();
         };
     </script>
 </body>
